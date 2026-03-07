@@ -1,5 +1,4 @@
-import { Component, Input, OnInit, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { arrowBack } from 'ionicons/icons';
@@ -10,17 +9,11 @@ import { arrowBack } from 'ionicons/icons';
   styleUrls: ['client-detail.page.scss'],
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonButton, IonIcon],
 })
-export class ClientDetailPage implements OnInit {
+export class ClientDetailPage {
   @Input() id?: string;
-
-  private route = inject(ActivatedRoute);
 
   constructor() {
     addIcons({ arrowBack });
-  }
-
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id') ?? undefined;
   }
 
   goBack() {

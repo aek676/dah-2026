@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { NavController } from '@ionic/angular/standalone';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
@@ -18,7 +18,7 @@ interface Reservation {
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton, NgFor],
 })
 export class ReservationsPage {
-  private navController = inject(NavController);
+  constructor(private navCtrl: NavController) { }
 
   reservations: Reservation[] = [
     { id: 1, clientName: 'John Doe', service: 'Haircut', date: '2024-03-15', time: '10:00 AM' },
@@ -29,6 +29,6 @@ export class ReservationsPage {
   ];
 
   createReservation() {
-    this.navController.navigateForward('/tabs/reservations/create');
+    this.navCtrl.navigateForward('/tabs/reservations/create');
   }
 }

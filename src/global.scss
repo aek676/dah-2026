@@ -35,3 +35,74 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* ============================================
+   Bearnie Theme - Map shadcn variables to Ionic
+   ============================================ */
+
+:root {
+  /* Map shadcn colors to Ionic */
+  --ion-color-primary: var(--primary);
+  --ion-color-primary-contrast: var(--primary-foreground);
+  --ion-color-secondary: var(--secondary);
+  --ion-color-secondary-contrast: var(--secondary-foreground);
+  --ion-color-danger: var(--destructive);
+  --ion-color-danger-contrast: var(--destructive-foreground);
+  
+  /* Background & text */
+  --ion-background-color: var(--background);
+  --ion-text-color: var(--foreground);
+  
+  /* Cards & surfaces */
+  --ion-item-background: var(--card);
+  --ion-card-background: var(--card);
+  
+  /* Borders & inputs */
+  --ion-border-color: var(--border);
+  --ion-input-background: var(--input);
+  
+  /* Tab bar */
+  --ion-tab-bar-background: var(--background);
+  --ion-tab-bar-color: var(--muted-foreground);
+  --ion-tab-bar-color-selected: var(--primary);
+  
+  /* Toolbar */
+  --ion-toolbar-background: var(--background);
+  --ion-toolbar-color: var(--foreground);
+}
+
+/* Dark mode */
+.dark, body.dark, :root[color-scheme="dark"] {
+  --ion-color-primary: var(--primary);
+  --ion-color-primary-contrast: var(--primary-foreground);
+  --ion-color-secondary: var(--secondary);
+  --ion-color-secondary-contrast: var(--secondary-foreground);
+  --ion-color-danger: var(--destructive);
+  --ion-color-danger-contrast: var(--destructive-foreground);
+  
+  --ion-background-color: var(--background);
+  --ion-text-color: var(--foreground);
+  
+  --ion-item-background: var(--card);
+  --ion-card-background: var(--card);
+  
+  --ion-border-color: var(--border);
+  --ion-input-background: var(--input);
+  
+  --ion-tab-bar-background: var(--background);
+  --ion-tab-bar-color: var(--muted-foreground);
+  --ion-tab-bar-color-selected: var(--primary);
+  
+  --ion-toolbar-background: var(--background);
+  --ion-toolbar-color: var(--foreground);
+}
+
+/* Apply border radius to Ionic components */
+ion-button, ion-card, ion-input, ion-item, ion-chip {
+  --border-radius: var(--radius);
+}
+
+/* Global font */
+body, html, ion-content, ion-label, ion-text {
+  --font-family: var(--font-sans);
+}
