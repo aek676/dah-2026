@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgFor } from '@angular/common';
 import { NavController } from '@ionic/angular/standalone';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
 
@@ -15,10 +14,13 @@ interface Reservation {
   selector: 'app-reservations',
   templateUrl: 'reservations.page.html',
   styleUrls: ['reservations.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton, NgFor],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton],
 })
 export class ReservationsPage {
-  constructor(private navCtrl: NavController) { }
+
+  constructor(private navCtrl: NavController) {
+    this.navCtrl = navCtrl;
+  }
 
   reservations: Reservation[] = [
     { id: 1, clientName: 'John Doe', service: 'Haircut', date: '2024-03-15', time: '10:00 AM' },

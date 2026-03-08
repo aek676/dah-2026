@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
 
@@ -14,12 +13,11 @@ interface Product {
   selector: 'app-products',
   templateUrl: 'products.page.html',
   styleUrls: ['products.page.scss'],
-  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton],
 })
 export class ProductsPage {
-  private router: Router;
 
-  constructor(router: Router) {
+  constructor(private router: Router) {
     this.router = router;
   }
 

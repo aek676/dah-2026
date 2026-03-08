@@ -17,12 +17,14 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let client of clients" [routerLink]="['/tabs/client', client.id]">
-      <ion-label>
-        <h2>{{ client.name }}</h2>
-        <p>{{ client.email }}</p>
-        <p>{{ client.phone }}</p>
-      </ion-label>
-    </ion-item>
+    @for (client of clients; track client.id) {
+      <ion-item [routerLink]="['/tabs/client', client.id]">
+        <ion-label>
+          <h2>{{ client.name }}</h2>
+          <p>{{ client.email }}</p>
+          <p>{{ client.phone }}</p>
+        </ion-label>
+      </ion-item>
+    }
   </ion-list>
 </ion-content>
