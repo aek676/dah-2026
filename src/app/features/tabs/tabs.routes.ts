@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     loadComponent: () =>
       import('./tabs.page').then((m) => m.TabsPage),
     children: [
