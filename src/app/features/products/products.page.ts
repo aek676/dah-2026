@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton } from '@ionic/angular/standalone';
 
@@ -14,10 +14,14 @@ interface Product {
   selector: 'app-products',
   templateUrl: 'products.page.html',
   styleUrls: ['products.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton, NgFor],
+  imports: [CommonModule, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, IonButton],
 })
 export class ProductsPage {
-  private router = inject(Router);
+  private router: Router;
+
+  constructor(router: Router) {
+    this.router = router;
+  }
 
   products: Product[] = [
     { id: 1, name: 'Shampoo', price: 15.99, description: 'Professional hair shampoo' },

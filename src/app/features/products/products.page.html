@@ -17,13 +17,15 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let product of products">
-      <ion-label>
-        <h2>{{ product.name }}</h2>
-        <p>${{ product.price }}</p>
-        <p>{{ product.description }}</p>
-      </ion-label>
-    </ion-item>
+    @for (product of products; track product.id) {
+      <ion-item>
+        <ion-label>
+          <h2>{{ product.name }}</h2>
+          <p>${{ product.price }}</p>
+          <p>{{ product.description }}</p>
+        </ion-label>
+      </ion-item>
+    }
   </ion-list>
 
   <ion-button expand="block" color="danger" (click)="logout()" class="logout-btn">Cerrar Sesión</ion-button>
