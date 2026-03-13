@@ -39,6 +39,7 @@
             [imageUrl]="movie.Poster"
             [showFavorite]="false"
             [routerLink]="['/movie-detail', movie.imdbID]"
+            (click)="closeModal()"
           >
           </app-movie-card>
         </div>
