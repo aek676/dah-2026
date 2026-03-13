@@ -8,10 +8,13 @@ import { OMDbMovie, OMDbSearchApiResponse } from '../../models/movies.model';
 })
 export class MovieService {
   private http = inject(HttpClient);
-  private readonly API_URL = `https://www.omdapi.com/?apikey=${environment.apikeyOMDb}`;
+  private readonly API_URL = `https://www.omdbapi.com/?apikey=${environment.apikeyOMDb}`;
 
   private _movies = signal<OMDbMovie[]>([]);
   public movies = this._movies.asReadonly();
+
+  private _currentMovie = signal<OMDbMovie | null>(null);
+  public currentMovie = this._currentMovie.asReadonly();
 
   public totatResults = computed(() => this._movies().length);
 
@@ -20,6 +23,14 @@ export class MovieService {
       .get<OMDbSearchApiResponse>(`${this.API_URL}&s=${title}`)
       .subscribe((response) => {
         this._movies.set(response.Response === 'True' ? response.Search : []);
+      });
+  }
+
+  getMovieDetails(id: string) {
+    this.http
+      .get<OMDbMovie>(`${this.API_URL}&i=${id}`)
+      .subscribe((movie) => {
+        this._currentMovie.set(movie.Response === 'True' ? movie : null);
       });
   }
 }

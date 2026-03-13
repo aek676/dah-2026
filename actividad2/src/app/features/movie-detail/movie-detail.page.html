@@ -1,0 +1,82 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center ion-text-uppercase">
+      Cosmic Database
+    </ion-title>
+    <ion-buttons slot="end">
+      <div style="width: 48px"></div>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="galactic-background">
+    <div class="nebula"></div>
+    <div class="starfield"></div>
+  </div>
+
+  <div class="poster-container">
+    @if (movieService.currentMovie(); as movie) {
+    <ion-img
+      [src]="movie.Poster"
+      [alt]="movie.Title + ' Poster'"
+    ></ion-img>
+    <ion-badge color="light" class="live-signal-badge">Live Signal</ion-badge>
+    }
+  </div>
+
+  <div class="details-container">
+    @if (movieService.currentMovie(); as movie) {
+    <div class="title-section">
+      <ion-text color="primary">
+        <span>Identification</span>
+      </ion-text>
+      <h1>{{ movie.Title }}</h1>
+    </div>
+
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Chronology</ion-card-subtitle>
+              <ion-card-title>{{ movie.Year }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>Classification</ion-card-subtitle>
+              <ion-card-title>{{ movie.Type | titlecase }}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-card class="registry-card">
+      <ion-card-content>
+        <ion-icon name="qr-code-outline" size="large"></ion-icon>
+        <div class="registry-info">
+          <ion-text color="primary">Global Registry ID</ion-text>
+          <div class="id-wrapper">
+            <h2>{{ movie.imdbID }}</h2>
+            <div class="pulse-dot"></div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <div class="action-section">
+      <ion-button expand="block" shape="round" color="light">
+        <ion-icon slot="start" name="bookmark-outline"></ion-icon>
+        Save to Favorites
+      </ion-button>
+    </div>
+    }
+  </div>
+</ion-content>

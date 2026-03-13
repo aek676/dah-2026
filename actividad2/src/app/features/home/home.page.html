@@ -3,7 +3,7 @@
 
   <ion-list>
     @for (movie of movieService.movies(); track movie.imdbID) {
-    <ion-item [routerLink]="['/movie', movie.imdbID]">
+    <ion-item [routerLink]="['/movie-detail', movie.imdbID]">
       <ion-label>
         <h2>{{ movie.Title }}</h2>
         <p>{{ movie.Year }}</p>
