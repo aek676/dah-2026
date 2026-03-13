@@ -20,10 +20,7 @@
 
   <div class="poster-container">
     @if (movieService.currentMovie(); as movie) {
-    <ion-img
-      [src]="movie.Poster"
-      [alt]="movie.Title + ' Poster'"
-    ></ion-img>
+    <ion-img [src]="movie.Poster" [alt]="movie.Title + ' Poster'"></ion-img>
     <ion-badge color="light" class="live-signal-badge">Live Signal</ion-badge>
     }
   </div>

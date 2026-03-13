@@ -27,10 +27,8 @@ export class MovieService {
   }
 
   getMovieDetails(id: string) {
-    this.http
-      .get<OMDbMovie>(`${this.API_URL}&i=${id}`)
-      .subscribe((movie) => {
-        this._currentMovie.set(movie.Response === 'True' ? movie : null);
-      });
+    this.http.get<OMDbMovie>(`${this.API_URL}&i=${id}`).subscribe((movie) => {
+      this._currentMovie.set(movie.Response === 'True' ? movie : null);
+    });
   }
 }

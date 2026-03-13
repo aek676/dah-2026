@@ -1,21 +1,43 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import {
   IonContent,
   IonSearchbar,
-  IonList,
-  IonLabel,
-  IonItem,
+  IonModal,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
+  IonButton,
+  IonIcon,
 } from '@ionic/angular/standalone';
+import { MovieCardPage } from '../movie-card/movie-card.page';
 import { MovieService } from 'src/app/core/services/movie/movie.service';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
-  imports: [IonContent, IonSearchbar, IonList, IonLabel, IonItem, RouterLink],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterLink,
+    IonContent,
+    IonSearchbar,
+    IonModal,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonButtons,
+    IonButton,
+    IonIcon,
+    MovieCardPage,
+  ],
 })
 export class HomePage {
+  @ViewChild(IonModal) modal!: IonModal;
   public movieService = inject(MovieService);
 
   onSearch(event: any) {
@@ -24,5 +46,9 @@ export class HomePage {
     if (query) {
       this.movieService.searchMovies(query);
     }
+  }
+
+  close() {
+    this.modal.dismiss();
   }
 }

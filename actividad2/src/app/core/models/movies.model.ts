@@ -4,6 +4,7 @@ export interface OMDbMovie {
   imdbID: string;
   Type: string;
   Poster: string;
+  Response?: string;
 }
 
 export interface OMDbSearchApiResponse {
