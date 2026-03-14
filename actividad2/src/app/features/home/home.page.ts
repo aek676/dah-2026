@@ -19,7 +19,7 @@ import {
 import { MovieCardPage } from '../movie-card/movie-card.page';
 import { MovieService } from 'src/app/core/services/movie/movie.service';
 import { addIcons } from 'ionicons';
-import { star } from 'ionicons/icons';
+import { star, closeOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
@@ -49,7 +49,7 @@ export class HomePage {
   public movieService = inject(MovieService);
 
   constructor() {
-    addIcons({ star });
+    addIcons({ star, closeOutline });
   }
 
   onSearch(event: any) {
