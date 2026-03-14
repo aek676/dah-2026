@@ -12,6 +12,9 @@ import {
   IonButtons,
   IonButton,
   IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
 } from '@ionic/angular/standalone';
 import { MovieCardPage } from '../movie-card/movie-card.page';
 import { MovieService } from 'src/app/core/services/movie/movie.service';
@@ -33,6 +36,9 @@ import { MovieService } from 'src/app/core/services/movie/movie.service';
     IonButtons,
     IonButton,
     IonIcon,
+    IonGrid,
+    IonRow,
+    IonCol,
     MovieCardPage,
   ],
 })

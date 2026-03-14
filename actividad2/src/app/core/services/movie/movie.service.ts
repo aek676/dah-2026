@@ -16,7 +16,26 @@ export class MovieService {
   private _currentMovie = signal<OMDbMovie | null>(null);
   public currentMovie = this._currentMovie.asReadonly();
 
-  public totatResults = computed(() => this._movies().length);
+  private _favorites = signal<OMDbMovie[]>([]);
+  public favorites = this._favorites.asReadonly();
+
+  public totalResults = computed(() => this._movies().length);
+  public favoritesCount = computed(() => this._favorites().length);
+
+  public toggleFavorite(movie: OMDbMovie) {
+    const currentFavorites = this._favorites();
+    const isAlreadyFavorite = currentFavorites.some(m => m.imdbID === movie.imdbID);
+
+    if (isAlreadyFavorite) {
+      this._favorites.set(currentFavorites.filter(m => m.imdbID !== movie.imdbID));
+    } else {
+      this._favorites.set([...currentFavorites, movie]);
+    }
+  }
+
+  public isFavorite(imdbID: string): boolean {
+    return this._favorites().some(m => m.imdbID === imdbID);
+  }
 
   searchMovies(title: string) {
     this.http

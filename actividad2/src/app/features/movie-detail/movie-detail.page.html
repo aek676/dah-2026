@@ -69,9 +69,14 @@
     </ion-card>
 
     <div class="action-section">
-      <ion-button expand="block" shape="round" color="light">
-        <ion-icon slot="start" name="bookmark-outline"></ion-icon>
-        Save to Favorites
+      <ion-button
+        expand="block"
+        shape="round"
+        [color]="isFavorite() ? 'danger' : 'light'"
+        (click)="toggleFavorite()"
+      >
+        <ion-icon slot="start" [name]="isFavorite() ? 'heart' : 'heart-outline'"></ion-icon>
+        {{ isFavorite() ? 'Remove from Favorites' : 'Add to Favorites' }}
       </ion-button>
     </div>
     }

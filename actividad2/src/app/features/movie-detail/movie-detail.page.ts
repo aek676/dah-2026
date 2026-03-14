@@ -64,4 +64,16 @@ export class MovieDetailPage implements OnInit {
       this.movieService.getMovieDetails(id);
     }
   }
+
+  toggleFavorite() {
+    const movie = this.movieService.currentMovie();
+    if (movie) {
+      this.movieService.toggleFavorite(movie);
+    }
+  }
+
+  isFavorite(): boolean {
+    const movie = this.movieService.currentMovie();
+    return movie ? this.movieService.isFavorite(movie.imdbID) : false;
+  }
 }

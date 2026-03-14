@@ -9,6 +9,36 @@
     <button id="open-search-modal" class="invisible-overlay"></button>
   </div>
 
+  <ion-row class="section-header">
+    <ion-col>
+      <h2>MY HERALDS</h2>
+    </ion-col>
+    <ion-col>
+      <span>{{ movieService.favoritesCount() }}</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-grid>
+    <ion-row>
+      @for (movie of movieService.favorites(); track movie.imdbID) {
+      <ion-col size="6">
+        <app-movie-card
+          [title]="movie.Title"
+          [subtitle]="movie.Year"
+          [imageUrl]="movie.Poster"
+          [showFavorite]="false"
+          [routerLink]="['/movie-detail', movie.imdbID]"
+        >
+        </app-movie-card>
+      </ion-col>
+      } @empty {
+      <ion-col size="12">
+        <p class="ion-text-center ion-padding">No favorites yet.</p>
+      </ion-col>
+      }
+    </ion-row>
+  </ion-grid>
+
   <ion-modal trigger="open-search-modal">
     <ng-template>
       <ion-header class="ion-no-border">
@@ -32,17 +62,15 @@
 
       <ion-content class="ion-padding">
         @for (movie of movieService.movies(); track movie.imdbID) {
-        <div class="ion-text-center ion-margin-bottom">
-          <app-movie-card
-            [title]="movie.Title"
-            [subtitle]="movie.Year"
-            [imageUrl]="movie.Poster"
-            [showFavorite]="false"
-            [routerLink]="['/movie-detail', movie.imdbID]"
-            (click)="closeModal()"
-          >
-          </app-movie-card>
-        </div>
+        <app-movie-card
+          [title]="movie.Title"
+          [subtitle]="movie.Year"
+          [imageUrl]="movie.Poster"
+          [showFavorite]="false"
+          [routerLink]="['/movie-detail', movie.imdbID]"
+          (click)="closeModal()"
+        >
+        </app-movie-card>
         } @empty {
         <p class="ion-text-center">No signals found in this sector.</p>
         }
