@@ -18,3 +18,238 @@
 .silver-text-glow {
   text-shadow: 0 0 15px rgba(226, 232, 240, 0.3);
 }
+
+.poster-container {
+  padding: 1.5rem;
+}
+
+.poster-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 50%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.metallic-border {
+  border: 1px solid rgba(226, 232, 240, 0.3);
+  box-shadow: 0 0 20px rgba(226, 232, 240, 0.05);
+}
+
+.glass-panel {
+  background: rgba(2, 3, 5, 0.4);
+  backdrop-filter: blur(16px);
+}
+
+.live-signal-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+
+  .material-symbols-outlined {
+    font-size: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+.content-section {
+  padding: 0 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label-line {
+  width: 2rem;
+  height: 1px;
+  background: rgba(226, 232, 240, 0.4);
+}
+
+.label-text {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: rgba(226, 232, 240, 0.6);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.movie-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #f1f5f9;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+.registry-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .qr-decoration {
+    position: absolute;
+    right: -5%;
+    top: -20%;
+    opacity: 0.05;
+
+    .qr-icon {
+      color: white;
+      font-size: 8rem;
+    }
+  }
+
+  .registry-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .registry-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: rgba(226, 232, 240, 0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .id-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .imdb-id {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: monospace;
+    color: #f1f5f9;
+    letter-spacing: -0.05em;
+  }
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cards-row {
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.info-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  --background: transparent;
+  margin: 0;
+
+  ion-card-content {
+    padding: 1.25rem;
+  }
+
+  .info-subtitle {
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: rgba(148, 163, 184, 0.8);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 0.25rem;
+  }
+
+  .info-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin: 0;
+  }
+}
+
+.button-section {
+  padding-top: 1.5rem;
+}
+
+.chrome-gradient {
+  background: linear-gradient(135deg, #cbd5e1 0%, #ffffff 50%, #94a3b8 100%);
+  color: #0f172a;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+  transition: transform 0.15s ease;
+  cursor: pointer;
+
+  .material-symbols-outlined {
+    font-size: 1.25rem;
+  }
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.pulse-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1);
+  }
+}
