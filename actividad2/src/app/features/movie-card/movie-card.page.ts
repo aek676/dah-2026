@@ -30,6 +30,5 @@ export class MovieCardPage {
   @Input() title: string = '';
   @Input() subtitle: string = '';
   @Input() imageUrl: string = '';
-  @Input() showFavorite: boolean = false;
   @Input() routerLink: any = undefined;
 }

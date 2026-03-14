@@ -1,8 +1,8 @@
-<ion-card [routerLink]="routerLink">
+<ion-card [routerLink]="routerLink" class="ion-no-margin">
   <ion-img [src]="imageUrl" [alt]="title"></ion-img>
 
-  <ion-card-header>
-    <ion-card-title>{{ title }}</ion-card-title>
+  <ion-card-header class="ion-text-start ion-no-padding ion-margin-top">
     <ion-card-subtitle>{{ subtitle }}</ion-card-subtitle>
+    <ion-card-title>{{ title }}</ion-card-title>
   </ion-card-header>
 </ion-card>

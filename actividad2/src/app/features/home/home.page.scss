@@ -29,7 +29,7 @@
 }
 
 .brand-title {
-  font-size: 1.875rem;
+  font-size: 1.775rem;
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: 0.25em;
@@ -44,7 +44,7 @@
 
 .brand-divider {
   height: 2px;
-  width: 4rem; /* w-16 */
+  width: 4rem;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 9999px;
   margin-top: 0.5rem;
@@ -63,26 +63,23 @@ ion-searchbar {
   --box-shadow: none;
 }
 
-/* ==========================================================================
-   Sección "My Heralds" (Título y Contador)
-   ========================================================================== */
 .heralds-title {
   display: flex;
   align-items: center;
-  gap: 0.5rem; /* gap-2 */
+  gap: 0.5rem;
 
-  color: #ffffff; /* text-white */
-  font-size: 1.125rem; /* text-lg */
-  font-weight: 700; /* font-bold */
-  line-height: 1.25; /* leading-tight */
-  letter-spacing: 0.025em; /* tracking-wide */
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.025em;
 }
 
 .heralds-count {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--color-silver);
   font-size: 0.875rem;
@@ -90,5 +87,5 @@ ion-searchbar {
   min-width: 1.5rem;
   height: 1.5rem;
   padding: 0 0.4rem;
-  border-radius: 9999px; /* Píldora redondeada */
+  border-radius: 9999px;
 }

@@ -6,7 +6,7 @@
         color="primary"
         class="brand-title silver-text-glow"
       >
-        SILVER CINEMA
+        COSMIC CINEMA
       </ion-title>
       <div class="brand-divider"></div>
     </div>
@@ -44,7 +44,6 @@
           [title]="movie.Title"
           [subtitle]="movie.Year"
           [imageUrl]="movie.Poster"
-          [showFavorite]="false"
           [routerLink]="['/movie-detail', movie.imdbID]"
         >
         </app-movie-card>
@@ -84,7 +83,6 @@
           [title]="movie.Title"
           [subtitle]="movie.Year"
           [imageUrl]="movie.Poster"
-          [showFavorite]="false"
           [routerLink]="['/movie-detail', movie.imdbID]"
           (click)="closeModal()"
         >
