@@ -1,4 +1,10 @@
-<ion-content>
+<ion-header traslucent="true">
+  <ion-toolbar>
+    <ion-title>SILVER CINEMA</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
   <div class="search-trigger-wrapper">
     <ion-searchbar
       placeholder="Buscar películas..."
@@ -9,14 +15,14 @@
     <button id="open-search-modal" class="invisible-overlay"></button>
   </div>
 
-  <ion-row class="section-header">
-    <ion-col>
-      <h2>MY HERALDS</h2>
-    </ion-col>
-    <ion-col>
-      <span>{{ movieService.favoritesCount() }}</span>
-    </ion-col>
-  </ion-row>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col class="ion-text-uppercase">my heralds</ion-col>
+      <ion-col size="auto">
+        <span>{{ movieService.favoritesCount() }}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
   <ion-grid>
     <ion-row>
