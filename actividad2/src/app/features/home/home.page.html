@@ -78,18 +78,29 @@
       </ion-header>
 
       <ion-content class="ion-padding">
-        @for (movie of movieService.movies(); track movie.imdbID) {
-        <app-movie-card
-          [title]="movie.Title"
-          [subtitle]="movie.Year"
-          [imageUrl]="movie.Poster"
-          [routerLink]="['/movie-detail', movie.imdbID]"
-          (click)="closeModal()"
-        >
-        </app-movie-card>
-        } @empty {
-        <p class="ion-text-center">No signals found in this sector.</p>
-        }
+        <div class="immersive-nebula" slot="fixed"></div>
+        <div class="stars-container" slot="fixed"></div>
+
+        <div class="modal-cards-container">
+          @for (movie of movieService.movies(); track movie.imdbID) {
+
+          <div class="modal-celestial-wrapper">
+            <app-movie-card
+              [title]="movie.Title"
+              [subtitle]="movie.Year"
+              [imageUrl]="movie.Poster"
+              [routerLink]="['/movie-detail', movie.imdbID]"
+              (click)="closeModal()"
+            >
+            </app-movie-card>
+          </div>
+
+          } @empty {
+          <p class="ion-text-center empty-sector-text">
+            No signals found in this sector.
+          </p>
+          }
+        </div>
       </ion-content>
     </ng-template>
   </ion-modal>
