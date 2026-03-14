@@ -1,0 +1,20 @@
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.brand-title {
+  font-size: 1.275rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-style: italic;
+  margin: 0;
+}
+
+.silver-text-glow {
+  text-shadow: 0 0 15px rgba(226, 232, 240, 0.3);
+}
