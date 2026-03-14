@@ -4,30 +4,22 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-title class="ion-text-center ion-text-uppercase">
-      Cosmic Database
+      cosmic cinema
     </ion-title>
-    <ion-buttons slot="end">
-      <div style="width: 48px"></div>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="galactic-background">
-    <div class="nebula"></div>
-    <div class="starfield"></div>
-  </div>
-
-  <div class="poster-container">
+  <div>
     @if (movieService.currentMovie(); as movie) {
     <ion-img [src]="movie.Poster" [alt]="movie.Title + ' Poster'"></ion-img>
     <ion-badge color="light" class="live-signal-badge">Live Signal</ion-badge>
     }
   </div>
 
-  <div class="details-container">
+  <div>
     @if (movieService.currentMovie(); as movie) {
-    <div class="title-section">
+    <div>
       <ion-text color="primary">
         <span>Identification</span>
       </ion-text>
@@ -55,12 +47,12 @@
       </ion-row>
     </ion-grid>
 
-    <ion-card class="registry-card">
+    <ion-card>
       <ion-card-content>
         <ion-icon name="qr-code-outline" size="large"></ion-icon>
-        <div class="registry-info">
+        <div>
           <ion-text color="primary">Global Registry ID</ion-text>
-          <div class="id-wrapper">
+          <div>
             <h2>{{ movie.imdbID }}</h2>
             <div class="pulse-dot"></div>
           </div>
@@ -68,14 +60,17 @@
       </ion-card-content>
     </ion-card>
 
-    <div class="action-section">
+    <div>
       <ion-button
         expand="block"
         shape="round"
         [color]="isFavorite() ? 'danger' : 'light'"
         (click)="toggleFavorite()"
       >
-        <ion-icon slot="start" [name]="isFavorite() ? 'heart' : 'heart-outline'"></ion-icon>
+        <ion-icon
+          slot="start"
+          [name]="isFavorite() ? 'heart' : 'heart-outline'"
+        ></ion-icon>
         {{ isFavorite() ? 'Remove from Favorites' : 'Add to Favorites' }}
       </ion-button>
     </div>
