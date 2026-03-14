@@ -1,2 +1,19 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+
+:root {
+  --color-deep-space: #020617;
+  --color-primary: #e2e8f0;
+  --color-silver: #cbd5e1;
+  --color-nebula-pink: #701a75;
+  --color-nebula-blue: #1e3a8a;
+
+  --color-text-base: #f1f5f9;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --ion-background-color: var(--color-deep-space);
+  --ion-text-color: var(--color-text-base);
+  --ion-font-family: var(--font-display);
+}
