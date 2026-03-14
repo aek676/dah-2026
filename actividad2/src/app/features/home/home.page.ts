@@ -18,6 +18,8 @@ import {
 } from '@ionic/angular/standalone';
 import { MovieCardPage } from '../movie-card/movie-card.page';
 import { MovieService } from 'src/app/core/services/movie/movie.service';
+import { addIcons } from 'ionicons';
+import { star } from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
@@ -45,6 +47,10 @@ import { MovieService } from 'src/app/core/services/movie/movie.service';
 export class HomePage {
   @ViewChild(IonModal) modal!: IonModal;
   public movieService = inject(MovieService);
+
+  constructor() {
+    addIcons({ star });
+  }
 
   onSearch(event: any) {
     const query = event.target.value;

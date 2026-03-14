@@ -62,3 +62,33 @@ ion-searchbar {
   --border-radius: 9999px;
   --box-shadow: none;
 }
+
+/* ==========================================================================
+   Sección "My Heralds" (Título y Contador)
+   ========================================================================== */
+.heralds-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+
+  color: #ffffff; /* text-white */
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 700; /* font-bold */
+  line-height: 1.25; /* leading-tight */
+  letter-spacing: 0.025em; /* tracking-wide */
+}
+
+.heralds-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-silver);
+  font-size: 0.875rem;
+  font-weight: 600;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  border-radius: 9999px; /* Píldora redondeada */
+}
