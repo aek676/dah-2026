@@ -48,10 +48,6 @@ export class HomePage {
     }
   }
 
-  close() {
-    this.modal.dismiss();
-  }
-
   closeModal() {
     this.modal.dismiss();
   }
