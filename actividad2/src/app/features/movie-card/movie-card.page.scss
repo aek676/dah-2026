@@ -2,6 +2,16 @@ ion-card {
   background: transparent;
 }
 
+ion-content {
+  --background: transparent;
+  background-color: transparent;
+}
+
+ion-header {
+  --background: transparent;
+  background-color: transparent;
+}
+
 ion-card-title {
   font-size: 1rem;
 }

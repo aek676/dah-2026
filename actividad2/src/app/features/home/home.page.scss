@@ -166,3 +166,10 @@ ion-searchbar {
 .modal-celestial-wrapper:nth-child(3n):hover {
   transform: scale(1.05) translate(-1.5rem, -10px);
 }
+
+ion-grid,
+ion-row,
+ion-col {
+  --background: transparent;
+  background-color: transparent;
+}
