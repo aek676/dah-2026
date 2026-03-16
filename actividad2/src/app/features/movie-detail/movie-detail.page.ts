@@ -24,7 +24,6 @@ import { MovieService } from 'src/app/core/services/movie/movie.service';
   selector: 'app-movie-detail',
   templateUrl: 'movie-detail.page.html',
   styleUrls: ['movie-detail.page.scss'],
-  standalone: true,
   imports: [
     IonContent,
     IonHeader,

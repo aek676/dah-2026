@@ -14,7 +14,6 @@ import {
   selector: 'app-movie-card',
   templateUrl: './movie-card.page.html',
   styleUrls: ['./movie-card.page.scss'],
-  standalone: true,
   imports: [
     CommonModule,
     FormsModule,
