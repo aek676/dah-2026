@@ -21,21 +21,21 @@ import { Incidence } from '../../core/models/incidence.model';
 const SAMPLE_INCIDENCES: Incidence[] = [
   {
     id: '1',
-    photoUri: 'https://via.placeholder.com/150',
+    photoUri: 'https://i.imgur.com/kzuaLqT.jpeg',
     latitude: 37.3891,
     longitude: -5.9845,
     timestamp: Date.now() - 86400000,
   },
   {
     id: '2',
-    photoUri: 'https://via.placeholder.com/150',
+    photoUri: 'https://i.imgur.com/cMeVPWO.jpeg',
     latitude: 40.4168,
     longitude: -3.7038,
     timestamp: Date.now() - 172800000,
   },
   {
     id: '3',
-    photoUri: 'https://via.placeholder.com/150',
+    photoUri: 'https://i.imgur.com/KTTp2Km.jpeg',
     latitude: 41.3874,
     longitude: 2.1686,
     timestamp: Date.now() - 259200000,
