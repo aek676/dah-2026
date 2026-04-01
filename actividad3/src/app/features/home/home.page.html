@@ -1,29 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <ion-title>Reporta Incidencias</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Coordinates</ion-card-title>
+      <ion-card-title>Bienvenido</ion-card-title>
     </ion-card-header>
-
     <ion-card-content>
-      <ion-item>Latitude: {{ latitude }}</ion-item>
-      <ion-title>Longitude: {{ longitude }}</ion-title>
-      <ion-title>Accuracy: {{ accuracy }}</ion-title>
+      <p>
+        Esta aplicación te permite informar de desperfectos y problemas de
+        mantenimiento capturando evidencia visual y geográfica.
+      </p>
+      <ul>
+        <li>
+          <strong>Nueva Incidencia</strong>: Captura una foto, obtén tu
+          ubicación automáticamente y describe el problema.
+        </li>
+        <li>
+          <strong>Ver Incidencias</strong>: Consulta el historial de todas las
+          incidencias que has reportado.
+        </li>
+      </ul>
     </ion-card-content>
   </ion-card>
 
-  <div id="container">
-    <img alt="Photo" [src]="photo" />
-
-    <ion-fab vertial="bottom" horizontal="centar" slot="fixed">
-      <ion-fab-button (click)="takePicture()">
-        <ion-icon name="camera"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
+  <div class="ion-text-center ion-padding">
+    <ion-button expand="block" routerLink="/new-incidence" class="ion-margin-bottom">
+      Nueva Incidencia
+    </ion-button>
+    <ion-button expand="block" routerLink="/incidence-list" color="secondary">
+      Ver Incidencias
+    </ion-button>
   </div>
 </ion-content>
