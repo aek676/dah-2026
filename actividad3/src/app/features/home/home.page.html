@@ -16,4 +16,14 @@
       <ion-title>Accuracy: {{ accuracy }}</ion-title>
     </ion-card-content>
   </ion-card>
+
+  <div id="container">
+    <img alt="Photo" [src]="photo" />
+
+    <ion-fab vertial="bottom" horizontal="centar" slot="fixed">
+      <ion-fab-button (click)="takePicture()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>
