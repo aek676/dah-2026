@@ -4,24 +4,28 @@
   align-items: center;
   justify-content: center;
   min-height: 200px;
-  border: 2px dashed var(--ion-color-medium);
-  border-radius: 8px;
+  border: 2px dashed rgba(109, 40, 217, 0.5);
+  border-radius: 12px;
   margin-bottom: 16px;
+  background: rgba(12, 10, 26, 0.4);
 }
 
 .placeholder-icon {
   font-size: 64px;
-  color: var(--ion-color-medium);
+  color: #7c3aed;
 }
 
 .captured-photo {
   width: 100%;
   max-width: 300px;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 16px;
+  border: 2px solid rgba(109, 40, 217, 0.35);
+  box-shadow: 0 4px 20px rgba(109, 40, 217, 0.25);
 }
 
 .geo-info {
   font-size: 14px;
   margin-top: 8px;
+  color: #a78bfa;
 }

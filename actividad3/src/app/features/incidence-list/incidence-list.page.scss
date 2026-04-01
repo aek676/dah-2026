@@ -1,0 +1,22 @@
+ion-thumbnail {
+  --border-radius: 12px;
+  --size: 64px;
+  border: 2px solid rgba(109, 40, 217, 0.35);
+  overflow: hidden;
+}
+
+ion-thumbnail img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+ion-item {
+  --background: rgba(12, 10, 26, 0.6);
+  --color: #e2e8f0;
+  --border-color: rgba(109, 40, 217, 0.2);
+  --highlight-color-focused: var(--ion-color-primary);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  margin: 4px 0;
+}
