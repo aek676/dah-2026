@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <ion-input
+      type="email"
+      label="Email"
+      labelPlacement="floating"
+      fill="outline"
+      formControlName="email"
+    >
+    </ion-input>
+    @if(loginForm.controls.email.invalid && loginForm.controls.email.touched) {
+    <ion-text color="danger"> Please enter a valid email </ion-text>
+    }
+
+    <ion-input
+      type="password"
+      label="Password"
+      labelPlacement="floating"
+      fill="outline"
+      formControlName="password"
+    >
+    </ion-input>
+    @if(loginForm.controls.password.invalid &&
+    loginForm.controls.password.touched) {
+    <ion-text color="danger"> Password must be at least 6 characters </ion-text>
+    }
+
+    <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">
+      Log In
+    </ion-button>
+  </form>
+</ion-content>
