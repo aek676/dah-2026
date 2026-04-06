@@ -5,9 +5,9 @@ import {
   Firestore,
   query,
   where,
-} from 'firebase/firestore';
+  collectionData
+} from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
-import { collectionData } from '@angular/fire/firestore';
 import { Observable, of, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Product } from '../models/products.model';
