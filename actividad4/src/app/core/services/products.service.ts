@@ -5,7 +5,7 @@ import {
   Firestore,
   query,
   where,
-  collectionData
+  collectionData,
 } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Observable, of, switchMap } from 'rxjs';
@@ -41,5 +41,13 @@ export class ProductsService {
     if (!uid) throw new Error('No hay usuario autenticado');
 
     return addDoc(this.productsCollection, { ...product, userId: uid });
+  }
+
+  public allProducts = toSignal(this.getAllProducts(), { initialValue: [] });
+
+  getAllProducts() {
+    return collectionData(this.productsCollection, {
+      idField: 'id',
+    }) as Observable<Product[]>;
   }
 }

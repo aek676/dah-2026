@@ -22,4 +22,8 @@ export const routes: Routes = [
     path: 'add-product',
     loadComponent: () => import('./features/add-product/add-product.page').then( m => m.AddProductPage)
   },
+  {
+    path: 'products-list',
+    loadComponent: () => import('./features/products-list/products-list.page').then( m => m.ProductsListPage)
+  },
 ];
