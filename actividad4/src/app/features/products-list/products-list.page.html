@@ -8,19 +8,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    @for (product of productsService.allProducts(); track product.id) {
-    <ion-item>
-      <ion-thumbnail slot="start">
-        <img [src]="product.imageUrl" alt="{{ product.name }}" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
-      </ion-label>
-    </ion-item>
-    } @empty {
-    <ion-item>No products available.</ion-item>
-    }
-  </ion-list>
+  <app-product-list 
+    [products]="productsService.allProducts()" 
+    emptyMessage="No products available.">
+  </app-product-list>
 </ion-content>

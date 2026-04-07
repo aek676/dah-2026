@@ -9,16 +9,13 @@ import {
   IonButton,
   IonIcon,
   IonButtons,
-  IonList,
-  IonThumbnail,
-  IonItem,
-  IonLabel,
 } from '@ionic/angular/standalone';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { add, logOutOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
+import { ProductListComponent } from 'src/app/shared/components/product-list/product-list.component';
 
 @Component({
   selector: 'app-products',
@@ -35,11 +32,7 @@ import { addIcons } from 'ionicons';
     IonButton,
     IonIcon,
     IonButtons,
-    IonList,
-    IonThumbnail,
-    IonItem,
-    IonLabel,
-    RouterLink,
+    ProductListComponent,
   ],
 })
 export class ProductsPage {

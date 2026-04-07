@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormControl,
@@ -43,15 +43,11 @@ import { Router } from '@angular/router';
     IonBackButton,
   ],
 })
-export class LoginPage implements OnInit {
+export class LoginPage {
   private authService = inject(AuthService);
   private toastController = inject(ToastController);
   private loadingController = inject(LoadingController);
   private router = inject(Router);
-
-  constructor() {}
-
-  ngOnInit() {}
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),

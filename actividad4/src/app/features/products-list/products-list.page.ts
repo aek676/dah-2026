@@ -5,14 +5,11 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonList,
-  IonThumbnail,
-  IonItem,
-  IonLabel,
   IonButtons,
   IonBackButton,
 } from '@ionic/angular/standalone';
 import { ProductsService } from 'src/app/core/services/products.service';
+import { ProductListComponent } from 'src/app/shared/components/product-list/product-list.component';
 
 @Component({
   selector: 'app-products-list',
@@ -25,12 +22,9 @@ import { ProductsService } from 'src/app/core/services/products.service';
     IonTitle,
     IonToolbar,
     CommonModule,
-    IonList,
-    IonThumbnail,
-    IonItem,
-    IonLabel,
     IonButtons,
     IonBackButton,
+    ProductListComponent,
   ],
 })
 export class ProductsListPage {

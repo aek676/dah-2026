@@ -14,19 +14,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    @for (product of productService.products(); track product.id) {
-    <ion-item button detail="true" [routerLink]="['/product-details', product.id]">
-      <ion-thumbnail slot="start">
-        <img [src]="product.imageUrl" [alt]="product.name" />
-      </ion-thumbnail>
-      <ion-label>
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
-      </ion-label>
-    </ion-item>
-    } @empty {
-    <ion-item>You don't have products.</ion-item>
-    }
-  </ion-list>
+  <app-product-list 
+    [products]="productService.products()" 
+    [isClickable]="true"
+    emptyMessage="You don't have products.">
+  </app-product-list>
 </ion-content>

@@ -1,0 +1,15 @@
+<ion-list>
+  @for (product of products; track product.id) {
+  <ion-item [button]="isClickable" [detail]="isClickable" [routerLink]="isClickable ? ['/product-details', product.id] : null">
+    <ion-thumbnail slot="start">
+      <img [src]="product.imageUrl" [alt]="product.name" />
+    </ion-thumbnail>
+    <ion-label>
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+    </ion-label>
+  </ion-item>
+  } @empty {
+  <ion-item>{{ emptyMessage }}</ion-item>
+  }
+</ion-list>
