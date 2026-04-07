@@ -1,6 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import {
   IonContent,
   IonHeader,
@@ -27,8 +25,6 @@ import { ProductListComponent } from 'src/app/shared/components/product-list/pro
     IonHeader,
     IonTitle,
     IonToolbar,
-    CommonModule,
-    FormsModule,
     IonButton,
     IonIcon,
     IonButtons,

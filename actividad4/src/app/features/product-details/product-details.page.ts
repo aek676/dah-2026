@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
   AlertController,
@@ -9,11 +9,9 @@ import {
   IonToolbar,
   IonButtons,
   IonBackButton,
-  IonThumbnail,
-  IonLabel,
-  IonItem,
   IonButton,
   IonIcon,
+  IonLabel,
   ToastController,
 } from '@ionic/angular/standalone';
 import { ProductsService } from 'src/app/core/services/products.service';
@@ -28,18 +26,16 @@ import { addIcons } from 'ionicons';
   styleUrls: ['./product-details.page.scss'],
   standalone: true,
   imports: [
+    AsyncPipe,
     IonContent,
     IonHeader,
     IonTitle,
     IonToolbar,
-    CommonModule,
     IonButtons,
     IonBackButton,
-    IonThumbnail,
-    IonLabel,
-    IonItem,
     IonButton,
     IonIcon,
+    IonLabel,
   ],
 })
 export class ProductDetailsPage implements OnInit {

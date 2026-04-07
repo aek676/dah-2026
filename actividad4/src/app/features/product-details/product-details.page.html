@@ -1,37 +1,32 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/products"></ion-back-button>
+      <ion-back-button defaultHref="/products" color="primary"></ion-back-button>
     </ion-buttons>
     <ion-title>Product Details</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirmDelete()" color="danger">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   @if (product$ | async; as product) {
   <div class="product-details">
-    <ion-thumbnail class="product-image">
-      <img [src]="product.imageUrl" [alt]="product.name" />
-    </ion-thumbnail>
+    <div class="image-container">
+      <img [src]="product.imageUrl" [alt]="product.name" class="product-image" />
+    </div>
     
     <div class="product-info">
-      <h2>{{ product.name }}</h2>
-      <p>{{ product.description }}</p>
+      <h1 class="product-name">{{ product.name }}</h1>
+      <p class="product-description">{{ product.description }}</p>
     </div>
-
-    <ion-button
-      expand="block"
-      color="danger"
-      class="ion-margin-top"
-      (click)="confirmDelete()"
-    >
-      <ion-icon slot="start" name="trash-outline"></ion-icon>
-      Delete Product
-    </ion-button>
   </div>
   } @else {
-  <ion-item>
+  <div class="not-found">
     <ion-label>Product not found.</ion-label>
-  </ion-item>
+  </div>
   }
 </ion-content>

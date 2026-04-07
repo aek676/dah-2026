@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
   IonList,
@@ -12,7 +11,7 @@ import { Product } from '../../../core/models/products.model';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, RouterModule, IonList, IonItem, IonThumbnail, IonLabel],
+  imports: [RouterModule, IonList, IonItem, IonThumbnail, IonLabel],
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })

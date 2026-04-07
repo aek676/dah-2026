@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {
   IonContent,
   IonHeader,
@@ -21,7 +20,6 @@ import { ProductListComponent } from 'src/app/shared/components/product-list/pro
     IonHeader,
     IonTitle,
     IonToolbar,
-    CommonModule,
     IonButtons,
     IonBackButton,
     ProductListComponent,
@@ -29,6 +27,4 @@ import { ProductListComponent } from 'src/app/shared/components/product-list/pro
 })
 export class ProductsListPage {
   public productsService = inject(ProductsService);
-
-  constructor() {}
 }
