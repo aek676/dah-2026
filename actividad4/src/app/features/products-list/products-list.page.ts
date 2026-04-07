@@ -9,6 +9,8 @@ import {
   IonThumbnail,
   IonItem,
   IonLabel,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/angular/standalone';
 import { ProductsService } from 'src/app/core/services/products.service';
 
@@ -27,6 +29,8 @@ import { ProductsService } from 'src/app/core/services/products.service';
     IonThumbnail,
     IonItem,
     IonLabel,
+    IonButtons,
+    IonBackButton,
   ],
 })
 export class ProductsListPage {

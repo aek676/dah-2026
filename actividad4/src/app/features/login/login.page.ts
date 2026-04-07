@@ -17,6 +17,8 @@ import {
   IonInput,
   IonText,
   IonButton,
+  IonButtons,
+  IonBackButton,
 } from '@ionic/angular/standalone';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Router } from '@angular/router';
@@ -37,6 +39,8 @@ import { Router } from '@angular/router';
     IonInput,
     IonText,
     IonButton,
+    IonButtons,
+    IonBackButton,
   ],
 })
 export class LoginPage implements OnInit {
