@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   docData,
   Firestore,
@@ -56,5 +57,10 @@ export class ProductsService {
   getProductById(id: string): Observable<Product | undefined> {
     const productDoc = doc(this.firestore, `products/${id}`);
     return docData(productDoc, { idField: 'id' }) as Observable<Product | undefined>;
+  }
+
+  async deleteProduct(id: string) {
+    const productDoc = doc(this.firestore, `products/${id}`);
+    return deleteDoc(productDoc);
   }
 }

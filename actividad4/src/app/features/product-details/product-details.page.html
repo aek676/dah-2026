@@ -18,6 +18,16 @@
       <h2>{{ product.name }}</h2>
       <p>{{ product.description }}</p>
     </div>
+
+    <ion-button
+      expand="block"
+      color="danger"
+      class="ion-margin-top"
+      (click)="confirmDelete()"
+    >
+      <ion-icon slot="start" name="trash-outline"></ion-icon>
+      Delete Product
+    </ion-button>
   </div>
   } @else {
   <ion-item>
