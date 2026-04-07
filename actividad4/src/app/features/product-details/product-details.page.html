@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Product Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  @if (product$ | async; as product) {
+  <div class="product-details">
+    <ion-thumbnail class="product-image">
+      <img [src]="product.imageUrl" [alt]="product.name" />
+    </ion-thumbnail>
+    
+    <div class="product-info">
+      <h2>{{ product.name }}</h2>
+      <p>{{ product.description }}</p>
+    </div>
+  </div>
+  } @else {
+  <ion-item>
+    <ion-label>Product not found.</ion-label>
+  </ion-item>
+  }
+</ion-content>

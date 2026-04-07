@@ -16,7 +16,7 @@ import {
 } from '@ionic/angular/standalone';
 import { ProductsService } from 'src/app/core/services/products.service';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { add, logOutOutline } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
 
@@ -39,6 +39,7 @@ import { addIcons } from 'ionicons';
     IonThumbnail,
     IonItem,
     IonLabel,
+    RouterLink,
   ],
 })
 export class ProductsPage {

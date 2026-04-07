@@ -16,9 +16,9 @@
 <ion-content>
   <ion-list>
     @for (product of productService.products(); track product.id) {
-    <ion-item>
+    <ion-item button detail="true" [routerLink]="['/product-details', product.id]">
       <ion-thumbnail slot="start">
-        <img [src]="product.imageUrl" />
+        <img [src]="product.imageUrl" [alt]="product.name" />
       </ion-thumbnail>
       <ion-label>
         <h2>{{ product.name }}</h2>

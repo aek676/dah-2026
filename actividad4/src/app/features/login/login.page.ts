@@ -80,16 +80,16 @@ export class LoginPage implements OnInit {
         this.router.navigate(['/products']);
       }, 2000);
     } catch (error: any) {
-      let customMessage = 'Ocurrió un error de autenticación.';
+      let customMessage = 'An authentication error occurred.';
 
       if (error.code === 'auth/user-not-found') {
-        customMessage = 'El usuario no existe en nuestros registros.';
+        customMessage = 'User does not exist in our records.';
       } else if (error.code === 'auth/wrong-password') {
-        customMessage = 'La contraseña es incorrecta.';
+        customMessage = 'Incorrect password.';
       } else if (error.code === 'auth/invalid-credential') {
-        customMessage = 'El correo electrónico o la contraseña son incorrectos.';
+        customMessage = 'Incorrect email or password.';
       } else if (error.code === 'auth/too-many-requests') {
-        customMessage = 'Demasiados intentos fallidos. Por favor, inténtalo más tarde.';
+        customMessage = 'Too many failed attempts. Please try again later.';
       }
 
       this.showErrorMessage(customMessage);

@@ -2,6 +2,8 @@ import { inject, Injectable } from '@angular/core';
 import {
   addDoc,
   collection,
+  doc,
+  docData,
   Firestore,
   query,
   where,
@@ -38,7 +40,7 @@ export class ProductsService {
 
   async addProduct(product: Product) {
     const uid = this.authService.getUID();
-    if (!uid) throw new Error('No hay usuario autenticado');
+    if (!uid) throw new Error('No authenticated user');
 
     return addDoc(this.productsCollection, { ...product, userId: uid });
   }
@@ -49,5 +51,10 @@ export class ProductsService {
     return collectionData(this.productsCollection, {
       idField: 'id',
     }) as Observable<Product[]>;
+  }
+
+  getProductById(id: string): Observable<Product | undefined> {
+    const productDoc = doc(this.firestore, `products/${id}`);
+    return docData(productDoc, { idField: 'id' }) as Observable<Product | undefined>;
   }
 }
