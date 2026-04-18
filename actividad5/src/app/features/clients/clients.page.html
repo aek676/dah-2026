@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     Clients
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Clients</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    @for (client of clients; track client.id) {
+      <ion-item [routerLink]="['/tabs/client', client.id]">
+        <ion-label>
+          <h2>{{ client.name }}</h2>
+          <p>{{ client.email }}</p>
+          <p>{{ client.phone }}</p>
+        </ion-label>
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+     Reservations
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Reservations</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    @for (reservation of reservations; track reservation.id) {
+      <ion-item>
+        <ion-label>
+          <h2>{{ reservation.clientName }}</h2>
+          <p>{{ reservation.service }} - {{ reservation.date }} at {{ reservation.time }}</p>
+        </ion-label>
+      </ion-item>
+    }
+  </ion-list>
+
+  <ion-button expand="block" (click)="createReservation()" class="create-btn">New Reservation</ion-button>
+</ion-content>
