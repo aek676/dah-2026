@@ -1,14 +1,15 @@
 <ion-header [translucent]="true">
-<ion-toolbar>
-<ion-title>
-{{ title() }}
-</ion-title>
-</ion-toolbar>
+  <ion-button id="button-new-page" [routerLink]="['/new-page', word()]">
+    Go to new page
+  </ion-button>
+  <ion-toolbar>
+    <ion-title> {{ title() }} </ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-item id="item-input-text">
-<ion-input type="text" [(ngModel)]="word"></ion-input>
-</ion-item>
-<ion-button expand="full" (click)="getWord()">Change the word</ion-button>
+  <ion-item id="item-input-text">
+    <ion-input type="text" [(ngModel)]="word"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="getWord()">Change the word</ion-button>
 </ion-content>

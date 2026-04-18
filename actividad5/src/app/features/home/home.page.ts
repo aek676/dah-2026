@@ -1,4 +1,5 @@
 import { Component, inject, model, signal } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import {
   IonHeader,
@@ -16,6 +17,7 @@ import { GenerateTextService } from "src/app/core/services/generate-text.service
   templateUrl: "home.page.html",
   styleUrls: ["home.page.scss"],
   imports: [
+    RouterLink,
     IonHeader,
     IonToolbar,
     IonTitle,
