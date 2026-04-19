@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
           cache-dependency-path: actividad5/package-lock.json
 
@@ -64,11 +64,14 @@ jobs:
           path: actividad5/coverage/test-results.xml
           retention-days: 1
 
+      - name: Install Ionic CLI
+        run: npm install -D @ionic/cli
+
       - name: E2E Tests (Cypress)
         uses: cypress-io/github-action@v6
         with:
           working-directory: actividad5
-          start: npm run start
+          start: npx ionic serve
           wait-on: "http://localhost:8100"
           browser: chrome
 
@@ -81,3 +84,47 @@ jobs:
             actividad5/cypress/screenshots
             actividad5/cypress/videos
           retention-days: 1
+
+  reporting:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+      pull-requests: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Test Results
+        uses: actions/download-artifact@v4
+        with:
+          name: test-results
+
+      - name: Test Report
+        uses: dorny/test-reporter@v3
+        with:
+          name: Karma Tests
+          path: test-results.xml
+          reporter: java-junit
+
+      - name: Download ESLint Results
+        uses: actions/download-artifact@v4
+        with:
+          name: eslint-results
+
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@v4
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+          report-json: eslint-result.json
+          fail-on_errors: false
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    uses: ./.github/workflows/actividad5-deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

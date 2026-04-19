@@ -1,15 +1,16 @@
 name: "Actividad5 Deploy"
 
 on:
-  workflow_run:
-    workflows: ["Actividad 5 CI"]
-    types: [completed]
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+  workflow_call:
+    inputs:
+      trigger:
+        type: string
+        required: false
+        default: manual
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
 concurrency:
   group: "github-pages"
@@ -17,7 +18,7 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ inputs.trigger != 'skip-deploy' }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
