@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideRouter, RouterLink } from '@angular/router';
+import { provideRouter } from '@angular/router';
 
 import { ClientsPage } from './clients.page';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
 
 describe('ClientsPage', () => {
   let component: ClientsPage;
@@ -10,7 +9,7 @@ describe('ClientsPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ClientsPage, IonHeader, IonToolbar, IonTitle, IonContent, IonButtons, IonBackButton, IonList, IonItem, IonLabel, RouterLink],
+      imports: [ClientsPage],
       providers: [provideRouter([])]
     }).compileComponents();
   });

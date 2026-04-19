@@ -1,7 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-
 import { TabsPage } from './tabs.page';
 
 describe('TabsPage', () => {
@@ -10,8 +8,8 @@ describe('TabsPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TabsPage, IonicModule],
-      providers: [provideRouter([])]
+      imports: [TabsPage],
+      providers: [provideRouter([])],
     }).compileComponents();
   });
 
