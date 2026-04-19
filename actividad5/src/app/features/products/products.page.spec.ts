@@ -50,7 +50,7 @@ describe('ProductsPage', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const labels = compiled.querySelectorAll('ion-label h2');
     const names = Array.from(labels).map((label) => label.textContent?.trim());
-    expect(names).equals([
+    expect(names).toEqual([
       'Shampoo',
       'Conditioner',
       'Hair Oil',
