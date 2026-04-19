@@ -1,0 +1,83 @@
+name: Actividad 5 CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+defaults:
+  run:
+    working-directory: actividad5
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      checks: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: actividad5/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Linting
+        run: npm run lint -- --format json --output-file coverage/eslint-result.json
+        continue-on-error: true
+
+      - name: Upload ESLint Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eslint-results
+          path: actividad5/coverage/eslint-result.json
+          retention-days: 1
+
+      - name: Test
+        run: npm run test -- --watch=false --browsers=FirefoxHeadless
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Artifacts (Build)
+        uses: actions/upload-artifact@v4
+        with:
+          name: www
+          path: actividad5/www/
+          retention-days: 1
+
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: actividad5/coverage/test-results.xml
+          retention-days: 1
+
+      - name: E2E Tests (Cypress)
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: actividad5
+          start: npm run start
+          wait-on: "http://localhost:8100"
+          browser: chrome
+
+      - name: Upload Cypress Screenshots/Videos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-artifacts
+          path: |
+            actividad5/cypress/screenshots
+            actividad5/cypress/videos
+          retention-days: 1
