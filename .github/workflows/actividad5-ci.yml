@@ -47,7 +47,10 @@ jobs:
         run: npm run test -- --watch=false --browsers=FirefoxHeadless
 
       - name: Build
-        run: npm run build
+        run: npm run build -- --base-href /dah-2026/
+
+      - name: Fix SPA Routing for GitHub Pages
+        run: cp www/index.html www/404.html
 
       - name: Upload Artifacts (Build)
         uses: actions/upload-artifact@v4
