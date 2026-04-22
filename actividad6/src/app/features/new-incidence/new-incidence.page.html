@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nueva Incidencia</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+      @if (!photoUri) {
+        <div class="placeholder-container">
+          <ion-icon name="camera-outline" class="placeholder-icon"></ion-icon>
+          <ion-text color="medium">
+            <p>No se ha capturado ninguna foto todavía.</p>
+          </ion-text>
+        </div>
+      } @else {
+        <ion-img [src]="photoUri" class="captured-photo"></ion-img>
+        <ion-text color="dark">
+          <p class="geo-info">
+            <span>Latitud: {{ latitude }}</span><br />
+            <span>Longitud: {{ longitude }}</span>
+          </p>
+        </ion-text>
+      }
+    </ion-card-content>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-button
+      expand="block"
+      (click)="capturePhoto()"
+      [disabled]="capturing"
+      class="ion-margin-bottom"
+    >
+      <ion-icon name="camera" slot="start"></ion-icon>
+      @if (!capturing) {
+        Capturar Foto
+      } @else {
+        <ion-spinner name="crescent"></ion-spinner>
+      }
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      color="success"
+      (click)="saveIncidence()"
+      [disabled]="!photoUri || capturing || saving"
+    >
+      @if (!saving) {
+        Guardar Incidencia
+      } @else {
+        <ion-spinner name="crescent"></ion-spinner>
+      }
+    </ion-button>
+  </div>
+</ion-content>

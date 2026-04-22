@@ -3,8 +3,12 @@ name: Actividad 5 CI
 on:
   push:
     branches: [main]
+    paths:
+      - "actividad5/**"
   pull_request:
     branches: [main]
+    paths:
+      - "actividad5/**"
 
 defaults:
   run:
@@ -131,3 +135,4 @@ jobs:
       contents: read
       pages: write
       id-token: write
+

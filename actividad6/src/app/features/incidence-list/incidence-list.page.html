@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Listado de Incidencias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    @for (incidence of incidences; track incidence.id) {
+    <ion-item (click)="showUnderConstruction()" button detail="false">
+      <ion-thumbnail slot="start">
+        <ion-img
+          [src]="incidence.photoUri"
+          alt="Foto de la incidencia"
+        ></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <ion-text>
+          <p>
+            <span
+              >Lat: {{ incidence.latitude }} | Lon: {{ incidence.longitude
+              }}</span
+            >
+          </p>
+        </ion-text>
+        <ion-text color="medium">
+          <p>
+            <span>{{ incidence.timestamp | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>
